@@ -14,10 +14,11 @@
         <% messages.forEach((message) => { %>
 
           <li class="list-group-item">
-            <a href="/messages/<%= message.id %>"> <%= message.title %> </a>
-          </li>
+              <a href="/messages/<%= message.id %>"> <%= message.content %> </a>
+            </li>
         <% }) %>
       </ul>
+      
 
     </main>
   </body>
