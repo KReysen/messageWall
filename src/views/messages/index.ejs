@@ -14,12 +14,24 @@
         <% messages.forEach((message) => { %>
 
           <li class="list-group-item">
-              <a href="/messages/<%= message.id %>"> <%= message.content %> </a>
+              <p> <%= message.content %> </p>
             </li>
         <% }) %>
       </ul>
+
+      
+
+      <form action="/messages/create" method="post">
+        <div class="form-group">
+          
+          <input type="text" class="form-control" name="content" aria-describedby="contentHelp" placeholder="Enter your message">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
       
 
     </main>
+    <% include ../static/partials/scripts.ejs %>
   </body>
 </html>
