@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+
+    <main class="container">
+
+
+<form action="/messages/<%= message.id %>/update" method="post">
+    <div class="form-group">
+      
+      <label for="content">Edit message</label>
+      <input value="<%= message.content %>" type="text" class="form-control" name="content" aria-describedby="contentHelp" placeholder="<%= message.content %>">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+
+</main>
+
+<% include ../static/partials/scripts.ejs %>
+
+</body>
+</html>
