@@ -10,6 +10,21 @@ module.exports = {
         }
       })
     },
+    new(req,res,next) {
+      res.render("messages/new");
+    },
+    create(req, res, next){
+      let newMessage = {
+        content: req.body.content
+      };
+      messageQueries.addMessage(newMessage, (err, message) => {
+        if(err){
+          res.redirect(500, 'messages/new');
+        } else {
+          res.redirect(303, '/messages')
+        }
+      });
+    }
  
  
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+
+    <main class="container">
+
+      <h1>New message</h1>
+
+      <form action="/messages/create" method="post">
+        <div class="form-group">
+          <label for="content">message</label>
+          <input type="text" class="form-control" name="content" aria-describedby="contentHelp" placeholder="Enter content">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+    </main>
+
+    <% include ../static/partials/scripts.ejs %>
+
+  </body>
+</html>

@@ -10,6 +10,17 @@ module.exports = {
             callback(err);
         })
     },
+    addMessage(newMessage, callback){
+        return Message.create({
+            content: newMessage.content
+        })
+        .then((message) => {
+            callback(null, message);
+        })
+        .catch((err) => {
+            callback(err);
+        })
+    }
     
    
 }
